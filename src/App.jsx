@@ -9,7 +9,7 @@ function App() {
     return (
       
         <BrowserRouter>
-        // Dentro de tu componente principal:
+        
 <WhatsAppButton />
             <Routes>
                 <Route path="/" element={<Home />} />
