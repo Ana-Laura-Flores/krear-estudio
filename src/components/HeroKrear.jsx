@@ -60,7 +60,7 @@ export default function HeroKrear() {
                             </a>
 
                             <a
-                                href="#contactowa.me/5491149468032"
+                                href="https://wa.me/5491149468032"
                                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-white/30 text-white text-[11px] font-bold uppercase tracking-widest hover:border-white hover:bg-white/10 transition-all duration-300"
                             >
                                 Hablemos

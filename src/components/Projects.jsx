@@ -3,8 +3,6 @@ import React from "react";
 import portadaBotto from "../assets/image/portada-grupoboto.jpg";
 import csainHome from "../assets/image/portada-csain.jpg";
 import vistemeLinda from "../assets/image/visteme-linda.jpg";
-
-// Reemplazar por los nombres reales de tus imágenes
 import ventek from "../assets/image/Ventek-paleta.jpg";
 import metalAir from "../assets/image/portada-metalair.jpg";
 import phantroVision from "../assets/image/phantro-tarjeta.png";
@@ -14,526 +12,304 @@ const projects = [
         number: "01",
         name: "Grupo Botto",
         category: "Desarrollo web · Presentación comercial",
-        description:
-            "Nueva presencia digital para comunicar con claridad los servicios y la propuesta de la empresa.",
+        challenge:
+            "La empresa necesitaba construir su presencia digital desde cero y contar con un espacio para presentar sus servicios de manera clara y profesional.",
+        work:
+            "Diseñé y desarrollé el sitio web institucional, trabajando en la estructura de contenidos, la navegación y la presentación visual. También diseñé una presentación comercial en PDF.",
+        solution:
+            "Una propuesta de comunicación que integra los canales digital e institucional bajo un mismo lenguaje visual.",
         image: portadaBotto,
-        href: "/proyectos/grupo-botto",
-        accent: "fuchsia",
-        featured: true,
+        href: "https://grupoboto.com.ar/",
+        accent: "cyan",
+        external: true,
     },
     {
         number: "02",
         name: "Método CSain®",
-        category: "Desarrollo web",
-        description:
-            "Actualización y reconstrucción de una presencia digital existente para acompañar la evolución del método.",
+        category: "Rediseño y desarrollo web",
+        challenge:
+            "El sitio existente necesitaba renovarse para acompañar la evolución del método y comunicar mejor sus distintas propuestas: clases regulares, formación profesional y entrenamiento integral.",
+        work:
+            "Rediseñé y desarrollé la web, reorganizando los contenidos, la jerarquía visual y la experiencia de navegación para presentar la información de manera más clara y actual.",
+        solution:
+            "Un espacio digital alineado con la identidad del Método CSain® y preparado para comunicar sus diferentes propuestas.",
         image: csainHome,
-        href: "/proyectos/metodo-csain",
+        href: "https://csain.com.ar/",
         accent: "cyan",
+        external: true,
     },
     {
         number: "03",
         name: "Vísteme Linda",
-        category: "Rediseño de marca · E-commerce",
-        description:
-            "Rediseño de identidad y desarrollo inicial de la tienda online.",
+        category: "Rediseño de identidad · E-commerce",
+        challenge:
+            "La marca necesitaba renovar su identidad visual y trasladar esa nueva imagen a su tienda online, logrando una comunicación coherente entre la marca y la experiencia de compra.",
+        work:
+            "Trabajé en el rediseño de la identidad visual y en el desarrollo de la tienda en Tiendanube, integrando los recursos gráficos con la organización y presentación de los productos.",
+        solution:
+            "Una identidad renovada y aplicada al entorno digital para dar mayor coherencia a la presentación de la marca.",
         image: vistemeLinda,
-        href: "/proyectos/visteme-linda",
-        accent: "fuchsia",
+        accent: "magenta",
     },
     {
         number: "04",
         name: "Ventek",
         category: "Identidad visual",
-        description:
-            "Desarrollo de identidad visual y aplicaciones para la marca.",
+        challenge:
+            "El proyecto necesitaba una identidad visual propia que permitiera reconocer la marca y establecer una base gráfica para su comunicación.",
+        work:
+            "Desarrollé la identidad visual desde cero, definiendo un lenguaje gráfico y sus aplicaciones para mantener consistencia en la presentación de la marca.",
+        solution:
+            "Un sistema visual propio que aporta unidad y reconocimiento a sus diferentes piezas de comunicación.",
         image: ventek,
-        href: "/proyectos/ventek",
-        accent: "cyan",
+        accent: "magenta",
     },
     {
         number: "05",
         name: "Metal Air",
         category: "Desarrollo web · Catálogo B2B",
-        description:
-            "Sitio institucional y catálogo de productos para comunicación comercial.",
+        challenge:
+            "La empresa necesitaba su primera web institucional y una herramienta digital para presentar su oferta de productos técnicos a clientes comerciales.",
+        work:
+            "Diseñé y desarrollé el sitio web, organizando la información institucional y un catálogo de productos B2B con una estructura pensada para facilitar la consulta.",
+        solution:
+            "Una plataforma que combina la presentación de la empresa con un catálogo digital orientado a su comunicación comercial.",
         image: metalAir,
-        href: "/proyectos/metal-air",
-        accent: "fuchsia",
+        href: "https://metalair.com.ar/",
+        accent: "cyan",
+        external: true,
     },
     {
         number: "06",
         name: "Phantro Vision",
         category: "Identidad visual · Papelería",
-        description:
-            "Identidad visual y desarrollo de piezas gráficas para la marca.",
+        challenge:
+            "La marca necesitaba construir su identidad visual desde cero y definir una imagen consistente para sus materiales de comunicación.",
+        work:
+            "Desarrollé la identidad de marca y sus aplicaciones en papelería, trabajando en la relación entre los elementos gráficos y su implementación en diferentes soportes.",
+        solution:
+            "Una base visual propia para presentar la marca de forma reconocible y coherente.",
         image: phantroVision,
-        href: "/proyectos/phantro-vision",
-        accent: "cyan",
+        accent: "magenta",
     },
 ];
+
+function ProjectLink({ href, external, accent, children }) {
+    const color =
+        accent === "cyan" ? "bg-cyan-400" : "bg-fuchsia-500";
+
+    return (
+        <a
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="group/link inline-flex flex-col items-start gap-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
+        >
+            <span>{children}</span>
+
+            <span className="h-px w-8 overflow-hidden bg-white/25 transition-all duration-300 group-hover/link:w-full">
+                <span
+                    className={`block h-full w-full origin-left scale-x-0 ${color} transition-transform duration-300 group-hover/link:scale-x-100`}
+                />
+            </span>
+        </a>
+    );
+}
 
 export default function Projects() {
     return (
         <section
             id="proyectos"
-            className="bg-[#050508] text-white px-6 md:px-12 lg:px-20 py-24 md:py-32"
+            className="relative overflow-hidden bg-[#050508] px-6 py-20 text-white md:px-12 md:py-28 lg:px-20"
         >
-            <div className="max-w-7xl mx-auto">
-
+            <div className="mx-auto max-w-7xl">
                 {/* Encabezado */}
-                <div className="
-                    grid
-                    md:grid-cols-[0.65fr_1.35fr]
-                    gap-8
-                    md:gap-16
-                    items-start
-                    mb-14
-                    md:mb-20
-                ">
-                    <div className="flex items-start gap-4">
-                        <span className="
-                            w-2
-                            h-2
-                            mt-2
-                            rounded-full
-                            bg-fuchsia-500
-                            shadow-[0_0_12px_rgba(217,70,239,0.8)]
-                        " />
+                <div className="mb-16 md:mb-20">
+                    <div className="mb-6 flex items-center gap-3">
+                        <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
 
-                        <div>
-                            <p className="
-                                text-xl
-                                font-mono
-                                uppercase
-                                tracking-[0.3em]
-                                text-white/60
-                            ">
-                                Proyectos
-                            </p>
+                        <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/50">
+                            Proyectos seleccionados
+                        </span>
 
-                            <div className="
-                                mt-3
-                                w-12
-                                h-px
-                                bg-fuchsia-500/60
-                            " />
-                        </div>
+                        <span className="h-px max-w-24 flex-1 bg-white/15" />
                     </div>
 
-                    <div className="max-w-2xl">
-                        <p className="
-                            text-base
-                            md:text-lg
-                            text-white/55
-                            leading-relaxed
-                        ">
-                            Una selección de proyectos donde diseño,
-                            estrategia y desarrollo trabajan en conjunto.
+                    <div className="grid gap-5 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+                        <h2 className="text-4xl font-bold uppercase leading-[0.95] tracking-tight md:text-6xl">
+                            Diseño que
+                            <br />
+                            <span className="text-white/35">
+                                toma forma.
+                            </span>
+                        </h2>
+
+                        <p className="max-w-xl text-sm leading-relaxed text-white/55 md:justify-self-end md:text-base">
+                            Cada proyecto parte de una necesidad diferente.
+                            Diseño y desarrollo se combinan para encontrar
+                            soluciones visuales y digitales coherentes con
+                            cada marca.
                         </p>
                     </div>
                 </div>
 
-
-                {/* Proyecto destacado — Grupo Botto */}
-                <article className="mb-20 md:mb-28">
-
-                    <div className="flex items-end justify-between gap-6 mb-6">
-                        <div>
-
-                            <div className="flex items-center gap-3 mb-4">
-                                <span className="
-                                    text-sm
-                                    font-mono
-                                    text-fuchsia-500
-                                ">
-                                    {projects[0].number}
-                                </span>
-
-                                <span className="
-                                    text-[10px]
-                                    font-mono
-                                    uppercase
-                                    tracking-[0.25em]
-                                    text-white/35
-                                ">
-                                    {projects[0].category}
-                                </span>
-                            </div>
-
-                            <h2 className="
-                                text-4xl
-                                md:text-6xl
-                                font-black
-                                uppercase
-                                tracking-[-0.05em]
-                                leading-none
-                            ">
-                                {projects[0].name}
-                            </h2>
-
-                        </div>
-                    </div>
-
-                    <div className="
-                        overflow-hidden
-                        bg-[#0b0b10]
-                    ">
-                        <img
-                            src={projects[0].image}
-                            alt={`Proyecto ${projects[0].name}`}
-                            className="
-                                w-full
-                                h-auto
-                                block
-                                transition-transform
-                                duration-700
-                                hover:scale-[1.015]
-                            "
-                        />
-                    </div>
-
-                    <div className="
-                        flex
-                        flex-col
-                        md:flex-row
-                        md:items-center
-                        md:justify-between
-                        gap-5
-                        mt-6
-                    ">
-                        <p className="
-                            max-w-xl
-                            text-sm
-                            md:text-base
-                            text-white/45
-                            leading-relaxed
-                        ">
-                            {projects[0].description}
-                        </p>
-
-                        <a
-                            href={projects[0].href}
-                            className="
-                                inline-flex
-                                items-center
-                                gap-3
-                                text-[10px]
-                                font-bold
-                                uppercase
-                                tracking-[0.2em]
-                                text-white
-                                hover:text-fuchsia-500
-                                transition-colors
-                                shrink-0
-                            "
-                        >
-                            Ver proyecto
-                            <span className="text-lg">↗</span>
-                        </a>
-                    </div>
-
-                </article>
-
-
-                {/* Proyectos secundarios — CSain + Vísteme Linda */}
-                <div className="
-                    grid
-                    md:grid-cols-2
-                    gap-6
-                    md:gap-8
-                    mb-20
-                    md:mb-24
-                ">
-
-                    {projects.slice(1, 3).map((project) => {
-
+                {/* Proyectos */}
+                <div className="space-y-16 md:space-y-24">
+                    {projects.map((project, index) => {
                         const isCyan = project.accent === "cyan";
+
+                        const accentText = isCyan
+                            ? "text-cyan-400"
+                            : "text-fuchsia-500";
+
+                        const accentLine = isCyan
+                            ? "bg-cyan-400"
+                            : "bg-fuchsia-500";
 
                         return (
                             <article
                                 key={project.number}
-                                className="group"
+                                className="group grid items-center gap-7 md:grid-cols-2 md:gap-12 lg:gap-20"
                             >
+                                {/* Imagen */}
+                                <div
+                                    className={`relative ${
+                                        index % 2 === 1
+                                            ? "md:order-2"
+                                            : "md:order-1"
+                                    }`}
+                                >
+                                    <div className="relative aspect-[4/3] overflow-hidden bg-[#0b0b10]">
+                                        <img
+                                            src={project.image}
+                                            alt={`Proyecto ${project.name}`}
+                                            loading="lazy"
+                                            className="h-full w-full object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-[1.025] md:p-5"
+                                        />
 
-                                <div className="
-    relative
-    overflow-hidden
-    bg-[#101016]
-    aspect-[4/3]
-    flex
-    items-center
-    justify-center
-    p-3
-    md:p-4
-">
-                                    <img
-                                        src={project.image}
-                                        alt={`Proyecto ${project.name}`}
-                                       className="
-    w-full
-    h-full
-    object-contain
-    transition-transform
-    duration-500
-
-                                            group-hover:scale-[1.02]
-                                        "
-                                    />
+                                        <span
+                                            className={`absolute bottom-0 left-0 h-[2px] w-12 ${accentLine} transition-all duration-500 group-hover:w-24`}
+                                        />
+                                    </div>
                                 </div>
 
-                                <div className="pt-5">
-
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <span className={`
-                                            text-xs
-                                            font-mono
-                                            ${isCyan
-                                                ? "text-cyan-400"
-                                                : "text-fuchsia-500"
-                                            }
-                                        `}>
+                                {/* Información */}
+                                <div
+                                    className={`flex flex-col items-start ${
+                                        index % 2 === 1
+                                            ? "md:order-1"
+                                            : "md:order-2"
+                                    }`}
+                                >
+                                    {/* Número y categoría */}
+                                    <div className="mb-5 flex flex-wrap items-center gap-3">
+                                        <span
+                                            className={`text-xs font-mono ${accentText}`}
+                                        >
                                             {project.number}
                                         </span>
 
-                                        <span className="
-                                            text-[9px]
-                                            font-mono
-                                            uppercase
-                                            tracking-[0.22em]
-                                            text-white/30
-                                        ">
+                                        <span className="h-px w-8 bg-white/20" />
+
+                                        <span className="text-[9px] font-mono uppercase leading-relaxed tracking-[0.16em] text-white/45 md:text-[10px]">
                                             {project.category}
                                         </span>
                                     </div>
 
-                                    <div className="
-                                        flex
-                                        items-center
-                                        justify-between
-                                        gap-5
-                                    ">
+                                    {/* Nombre */}
+                                    <h3 className="mb-7 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+                                        {project.name}
+                                    </h3>
+
+                                    {/* Descripción con jerarquía */}
+                                    <div className="max-w-lg space-y-6">
+                                        {/* El desafío */}
                                         <div>
-
-                                            <h3 className="
-                                                text-2xl
-                                                md:text-3xl
-                                                font-black
-                                                uppercase
-                                                tracking-[-0.04em]
-                                            ">
-                                                {project.name}
-                                            </h3>
-
-                                            <p className="
-                                                mt-3
-                                                text-sm
-                                                text-white/40
-                                                leading-relaxed
-                                                max-w-md
-                                            ">
-                                                {project.description}
+                                            <p className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">
+                                                El desafío
                                             </p>
 
+                                            <p className="text-sm leading-7 text-white/65 md:text-base">
+                                                {project.challenge}
+                                            </p>
                                         </div>
 
-                                        <a
-                                            href={project.href}
-                                            className="
-                                                shrink-0
-                                                w-10
-                                                h-10
-                                                rounded-full
-                                                border
-                                                border-white/15
-                                                flex
-                                                items-center
-                                                justify-center
-                                                text-white/50
-                                                group-hover:border-white/40
-                                                group-hover:text-white
-                                                transition-all
-                                            "
-                                            aria-label={`Ver proyecto ${project.name}`}
+                                        {/* Mi trabajo */}
+                                        <div>
+                                            <p className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">
+                                                Mi trabajo
+                                            </p>
+
+                                            <p className="text-sm leading-7 text-white/65 md:text-base">
+                                                {project.work}
+                                            </p>
+                                        </div>
+
+                                        {/* La solución */}
+                                        <div
+                                            className={`border-l-2 ${
+                                                isCyan
+                                                    ? "border-cyan-400/60"
+                                                    : "border-fuchsia-500/60"
+                                            } pl-4`}
                                         >
-                                            ↗
-                                        </a>
+                                            <p
+                                                className={`mb-2 text-[10px] font-mono uppercase tracking-[0.18em] ${accentText}`}
+                                            >
+                                                La solución
+                                            </p>
 
+                                            <p className="text-sm leading-7 text-white/80 md:text-base">
+                                                {project.solution}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
 
+                                    {/* Enlace al proyecto */}
+                                    {project.href && (
+                                        <div className="mt-8">
+                                            <ProjectLink
+                                                href={project.href}
+                                                external={project.external}
+                                                accent={project.accent}
+                                            >
+                                                {project.external
+                                                    ? "Ver sitio"
+                                                    : "Ver proyecto"}
+                                            </ProjectLink>
+                                        </div>
+                                    )}
+                                </div>
                             </article>
                         );
                     })}
-
                 </div>
 
+                {/* Portfolio completo */}
+                <div className="mt-20 border-t border-white/15 pt-8 md:mt-28 md:flex md:items-center md:justify-between md:gap-8">
+                    <div className="mb-6 md:mb-0">
+                        <p className="mb-2 text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+                            Más trabajos
+                        </p>
 
-                {/* Últimos 3 — proyectos más chicos */}
-                <div className="
-                    grid
-                    sm:grid-cols-2
-                    lg:grid-cols-3
-                    gap-5
-                    md:gap-6
-                ">
-
-                    {projects.slice(3).map((project) => {
-
-                        const isCyan = project.accent === "cyan";
-
-                        return (
-                            <article
-                                key={project.number}
-                                className="group"
-                            >
-
-                               <div className="
-    relative
-    overflow-hidden
-    bg-[#101016]
-    aspect-[4/3]
-    flex
-    items-center
-    justify-center
-    p-3
-    md:p-4
-">
-                                    <img
-                                        src={project.image}
-                                        alt={`Proyecto ${project.name}`}
-                                        className="
-    w-full
-    h-full
-    object-contain
-    transition-transform
-    duration-500
-    group-hover:scale-[1.02]
-"
-                                    />
-                                </div>
-
-                                <div className="pt-4">
-
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <span className={`
-                                            text-[11px]
-                                            font-mono
-                                            ${isCyan
-                                                ? "text-cyan-400"
-                                                : "text-fuchsia-500"
-                                            }
-                                        `}>
-                                            {project.number}
-                                        </span>
-
-                                        <span className="
-                                            text-[8px]
-                                            font-mono
-                                            uppercase
-                                            tracking-[0.18em]
-                                            text-white/30
-                                            truncate
-                                        ">
-                                            {project.category}
-                                        </span>
-                                    </div>
-
-                                    <div className="
-                                        flex
-                                        items-center
-                                        justify-between
-                                        gap-3
-                                    ">
-
-                                        <h3 className="
-                                            text-xl
-                                            md:text-2xl
-                                            font-black
-                                            uppercase
-                                            tracking-[-0.04em]
-                                            leading-none
-                                        ">
-                                            {project.name}
-                                        </h3>
-
-                                        <a
-                                            href={project.href}
-                                            className="
-                                                shrink-0
-                                                w-8
-                                                h-8
-                                                rounded-full
-                                                border
-                                                border-white/15
-                                                flex
-                                                items-center
-                                                justify-center
-                                                text-white/40
-                                                group-hover:border-white/40
-                                                group-hover:text-white
-                                                transition-all
-                                            "
-                                            aria-label={`Ver proyecto ${project.name}`}
-                                        >
-                                            ↗
-                                        </a>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-                        );
-                    })}
-
-                </div>
-
-
-                {/* Ver más */}
-                <div className="
-                    mt-16
-                    md:mt-20
-                    pt-6
-                    border-t
-                    border-white/10
-                    flex
-                    flex-col
-                    sm:flex-row
-                    sm:items-center
-                    sm:justify-between
-                    gap-4
-                ">
-
-                    <p className="
-                        text-xs
-                        text-white/35
-                        font-mono
-                        uppercase
-                        tracking-[0.18em]
-                    ">
-                        Más proyectos y trabajos de diseño
-                    </p>
+                        <p className="text-lg text-white/80">
+                            Explorá el portfolio completo.
+                        </p>
+                    </div>
 
                     <a
                         href="https://krear-portfolio.vercel.app/"
                         target="_blank"
-                        rel="noreferrer"
-                        className="
-                            text-[10px]
-                            font-bold
-                            uppercase
-                            tracking-[0.2em]
-                            text-white
-                            hover:text-fuchsia-500
-                            transition-colors
-                        "
+                        rel="noopener noreferrer"
+                        className="group inline-flex flex-col items-start gap-2 text-sm font-medium text-white transition-colors hover:text-white/80"
                     >
-                        Ver portfolio completo ↗
+                        <span>Ver portfolio completo</span>
+
+                        <span className="h-px w-10 overflow-hidden bg-white/25 transition-all duration-300 group-hover:w-full">
+                            <span className="block h-full w-full origin-left scale-x-0 bg-fuchsia-500 transition-transform duration-300 group-hover:scale-x-100" />
+                        </span>
                     </a>
-
                 </div>
-
             </div>
         </section>
     );
