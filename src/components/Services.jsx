@@ -131,19 +131,7 @@ export default function Services() {
                                         {service.number}
                                     </span>
 
-                                    <span
-                                        className="
-                                            text-xl
-                                            text-white/20
-                                            group-hover:text-white/70
-                                            group-hover:translate-x-1
-                                            group-hover:-translate-y-1
-                                            transition-all
-                                            duration-300
-                                        "
-                                    >
-                                        ↗
-                                    </span>
+                                  
 
                                 </div>
 
