@@ -11,6 +11,7 @@ const projects = [
     {
         number: "01",
         name: "Grupo Botto",
+        alt: "Sitio web institucional de Grupo Botto, diseñado y desarrollado por KREAR",
         category: "Desarrollo web · Presentación comercial",
         challenge:
             "La empresa necesitaba construir su presencia digital desde cero y contar con un espacio para presentar sus servicios de manera clara y profesional.",
@@ -26,6 +27,7 @@ const projects = [
     {
         number: "02",
         name: "Método CSain®",
+         alt: "Sitio web del Método CSain®, con información sobre clases y formación profesional",
         category: "Rediseño y desarrollo web",
         challenge:
             "El sitio existente necesitaba renovarse para acompañar la evolución del método y comunicar mejor sus distintas propuestas: clases regulares, formación profesional y entrenamiento integral.",
@@ -41,6 +43,7 @@ const projects = [
     {
         number: "03",
         name: "Vísteme Linda",
+           alt: "Identidad visual y tienda online de la marca Vísteme Linda",
         category: "Rediseño de identidad · E-commerce",
         challenge:
             "La marca necesitaba renovar su identidad visual y trasladar esa nueva imagen a su tienda online, logrando una comunicación coherente entre la marca y la experiencia de compra.",
@@ -54,6 +57,7 @@ const projects = [
     {
         number: "04",
         name: "Ventek",
+         alt: "Paleta y sistema de identidad visual de la marca Ventek",
         category: "Identidad visual",
         challenge:
             "El proyecto necesitaba una identidad visual propia que permitiera reconocer la marca y establecer una base gráfica para su comunicación.",
@@ -67,6 +71,7 @@ const projects = [
     {
         number: "05",
         name: "Metal Air",
+          alt: "Sitio web y catálogo digital de productos industriales de Metal Air",
         category: "Desarrollo web · Catálogo B2B",
         challenge:
             "La empresa necesitaba su primera web institucional y una herramienta digital para presentar su oferta de productos técnicos a clientes comerciales.",
@@ -82,6 +87,7 @@ const projects = [
     {
         number: "06",
         name: "Phantro Vision",
+         alt: "Aplicación de identidad visual y papelería de Phantro Vision",
         category: "Identidad visual · Papelería",
         challenge:
             "La marca necesitaba construir su identidad visual desde cero y definir una imagen consistente para sus materiales de comunicación.",
@@ -182,7 +188,7 @@ export default function Projects() {
                                     <div className="relative aspect-[4/3] overflow-hidden bg-[#0b0b10]">
                                         <img
                                             src={project.image}
-                                            alt={`Proyecto ${project.name}`}
+                                           alt={project.alt}
                                             loading="lazy"
                                             className="h-full w-full object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-[1.025] md:p-5"
                                         />

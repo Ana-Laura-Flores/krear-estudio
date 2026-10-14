@@ -1,32 +1,30 @@
-
-import React from "react";
-
 const services = [
     {
         number: "01",
         title: "Identidad visual",
-        text: "Sistemas visuales que construyen personalidad, coherencia y reconocimiento para una marca.",
+        text: "Diseño de identidad visual y branding para construir marcas reconocibles, coherentes y con personalidad.",
         accent: "fuchsia",
     },
     {
         number: "02",
         title: "Diseño gráfico",
-        text: "Piezas y recursos visuales para comunicar productos, servicios e ideas con claridad.",
+        text: "Diseño de piezas gráficas y comunicación visual para presentar productos, servicios e ideas con claridad.",
         accent: "fuchsia",
     },
     {
         number: "03",
         title: "Desarrollo web",
-        text: "Sitios donde diseño, contenido y tecnología trabajan juntos para darle presencia a tu negocio.",
+        text: "Diseño y desarrollo de sitios web, landing pages y catálogos digitales adaptados a las necesidades de cada negocio.",
         accent: "cyan",
     },
     {
         number: "04",
         title: "Proyectos integrales",
-        text: "Soluciones que conectan identidad, diseño y desarrollo en una misma dirección.",
+        text: "Soluciones que combinan identidad visual, diseño gráfico y desarrollo web para mantener una comunicación coherente.",
         accent: "cyan",
     },
 ];
+
 
 const steps = [
     {
@@ -49,7 +47,11 @@ const steps = [
     },
 ];
 
-function SectionLabel({ children, accent = "fuchsia" }) {
+function SectionLabel({
+    children,
+    accent = "fuchsia",
+    as: Tag = "p",
+}) {
     const dotColor =
         accent === "cyan" ? "bg-cyan-400" : "bg-fuchsia-500";
 
@@ -59,20 +61,23 @@ function SectionLabel({ children, accent = "fuchsia" }) {
     return (
         <div className="flex items-start gap-4">
             <span
+                aria-hidden="true"
                 className={`mt-2 h-2 w-2 shrink-0 rounded-full ${dotColor}`}
             />
 
             <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/55 md:text-sm">
+                <Tag className="font-mono text-xs uppercase tracking-[0.28em] text-white/55 md:text-sm">
                     {children}
-                </p>
+                </Tag>
 
-                <div className={`mt-3 h-px w-10 ${lineColor}`} />
+                <div
+                    aria-hidden="true"
+                    className={`mt-3 h-px w-10 ${lineColor}`}
+                />
             </div>
         </div>
     );
 }
-
 export default function Services() {
     return (
         <section
@@ -82,16 +87,18 @@ export default function Services() {
             <div className="relative z-10 mx-auto max-w-7xl">
                 {/* Servicios */}
                 <div className="grid items-start gap-7 md:grid-cols-[0.65fr_1.35fr] md:gap-16">
-                    <SectionLabel>Qué hacemos</SectionLabel>
+                   <SectionLabel as="h2">Qué hacemos</SectionLabel>
 
                     <div className="max-w-2xl">
-                        <p className="text-base leading-relaxed text-white/60 md:text-lg">
-                            Identidad, diseño gráfico y desarrollo web.
-                            <span className="text-white/85">
-                                {" "}Cada proyecto necesita una forma distinta
-                                de abordarlo.
-                            </span>
-                        </p>
+                       
+<p className="text-base leading-relaxed text-white/60 md:text-lg">
+    Diseño gráfico, identidad visual y desarrollo web.
+    <span className="text-white/85">
+        {" "}Unimos estrategia, diseño y tecnología para
+        construir marcas y experiencias digitales coherentes.
+    </span>
+</p>
+
                     </div>
                 </div>
 
@@ -147,9 +154,9 @@ export default function Services() {
     className="mt-10 border-t border-white/10 pt-6 md:mt-12 md:pt-8"
 >
                     <div className="grid items-start gap-6 md:grid-cols-[0.65fr_1.35fr] md:gap-16">
-                        <SectionLabel accent="cyan">
-                            Cómo trabajamos
-                        </SectionLabel>
+                       <SectionLabel accent="cyan" as="h2">
+    Cómo trabajamos
+</SectionLabel>
 
                         <div className="max-w-2xl">
                             <h2 className="text-2xl font-bold tracking-tight md:text-3xl">

@@ -1,6 +1,3 @@
-
-import React from "react";
-
 export default function ContactCTA() {
     return (
         <section
@@ -9,6 +6,7 @@ export default function ContactCTA() {
         >
             {/* Iluminación de fondo */}
             <div
+                aria-hidden="true"
                 className="
                     pointer-events-none absolute
                     top-0 right-0
@@ -19,6 +17,7 @@ export default function ContactCTA() {
             />
 
             <div
+                aria-hidden="true"
                 className="
                     pointer-events-none absolute
                     bottom-0 left-0
@@ -31,14 +30,20 @@ export default function ContactCTA() {
             <div className="relative z-10 mx-auto max-w-7xl">
                 {/* Encabezado */}
                 <div className="mb-8 flex items-start gap-4 md:mb-10">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+                    <span
+                        aria-hidden="true"
+                        className="mt-2 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]"
+                    />
 
                     <div>
                         <p className="font-mono text-base uppercase tracking-[0.3em] text-white/60 md:text-xl">
                             Contacto
                         </p>
 
-                        <div className="mt-3 h-px w-12 bg-cyan-400/60" />
+                        <div
+                            aria-hidden="true"
+                            className="mt-3 h-px w-12 bg-cyan-400/60"
+                        />
                     </div>
                 </div>
 
@@ -76,6 +81,7 @@ export default function ContactCTA() {
                                 href="https://wa.me/5491149468032"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Contactar a KREAR por WhatsApp para hablar de un proyecto"
                                 className="
                                     inline-flex w-full items-center justify-center
                                     rounded-full bg-white px-6 py-4
