@@ -10,7 +10,7 @@ export default function Home() {
         <main className="w-full bg-[#050508] text-white">
             <HeroKrear />
             <Servicess />
-            <Process />
+           
             <Projects />
             < About />
             < Contact />

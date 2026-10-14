@@ -120,11 +120,11 @@ export default function Projects() {
     return (
         <section
             id="proyectos"
-            className="relative overflow-hidden bg-[#050508] px-6 py-20 text-white md:px-12 md:py-28 lg:px-20"
+            className="relative overflow-hidden bg-[#050508] px-6 py-12 text-white md:px-12 md:py-16 lg:px-20"
         >
             <div className="mx-auto max-w-7xl">
                 {/* Encabezado */}
-                <div className="mb-16 md:mb-20">
+               <div className="mb-10 md:mb-14">
                     <div className="mb-6 flex items-center gap-3">
                         <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
 
@@ -286,7 +286,7 @@ export default function Projects() {
                 </div>
 
                 {/* Portfolio completo */}
-                <div className="mt-20 border-t border-white/15 pt-8 md:mt-28 md:flex md:items-center md:justify-between md:gap-8">
+                <div className="mt-12 border-t border-white/15 pt-6 md:mt-16 md:flex md:items-center md:justify-between md:gap-8">
                     <div className="mb-6 md:mb-0">
                         <p className="mb-2 text-xs font-mono uppercase tracking-[0.2em] text-white/40">
                             Más trabajos

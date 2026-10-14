@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const services = [
@@ -10,7 +11,7 @@ const services = [
     {
         number: "02",
         title: "Diseño gráfico",
-        text: "Piezas y recursos visuales pensados para comunicar productos, servicios e ideas con claridad.",
+        text: "Piezas y recursos visuales para comunicar productos, servicios e ideas con claridad.",
         accent: "fuchsia",
     },
     {
@@ -22,170 +23,184 @@ const services = [
     {
         number: "04",
         title: "Proyectos integrales",
-        text: "Cuando el proyecto necesita conectar identidad, diseño y desarrollo en una misma dirección.",
+        text: "Soluciones que conectan identidad, diseño y desarrollo en una misma dirección.",
         accent: "cyan",
     },
 ];
 
+const steps = [
+    {
+        number: "01",
+        title: "Miramos",
+        text: "Entendemos el contexto, las necesidades y los objetivos de cada proyecto.",
+        accent: "fuchsia",
+    },
+    {
+        number: "02",
+        title: "Damos forma",
+        text: "Definimos una dirección visual y funcional acorde a lo que cada proyecto necesita.",
+        accent: "fuchsia",
+    },
+    {
+        number: "03",
+        title: "Lo hacemos real",
+        text: "Diseñamos, desarrollamos e implementamos una solución coherente con esa dirección.",
+        accent: "cyan",
+    },
+];
+
+function SectionLabel({ children, accent = "fuchsia" }) {
+    const dotColor =
+        accent === "cyan" ? "bg-cyan-400" : "bg-fuchsia-500";
+
+    const lineColor =
+        accent === "cyan" ? "bg-cyan-400/60" : "bg-fuchsia-500/60";
+
+    return (
+        <div className="flex items-start gap-4">
+            <span
+                className={`mt-2 h-2 w-2 shrink-0 rounded-full ${dotColor}`}
+            />
+
+            <div>
+                <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/55 md:text-sm">
+                    {children}
+                </p>
+
+                <div className={`mt-3 h-px w-10 ${lineColor}`} />
+            </div>
+        </div>
+    );
+}
+
 export default function Services() {
     return (
         <section
-            id="servicios"
-            className="bg-[#050508] text-white px-6 md:px-12 lg:px-20 py-20 md:py-28"
-        >
-            <div className="max-w-7xl mx-auto">
+    id="servicios"
+    className="relative overflow-hidden bg-[#050508] px-6 py-12 text-white md:px-12 md:py-16 lg:px-20"
+>
+            <div className="relative z-10 mx-auto max-w-7xl">
+                {/* Servicios */}
+                <div className="grid items-start gap-7 md:grid-cols-[0.65fr_1.35fr] md:gap-16">
+                    <SectionLabel>Qué hacemos</SectionLabel>
 
-                {/* Encabezado */}
-                <div className="grid md:grid-cols-[0.65fr_1.35fr] gap-8 md:gap-16 items-start mb-10 md:mb-12">
-
-                    {/* Etiqueta */}
-                    <div className="flex items-start gap-4">
-
-                        <span className="w-2 h-2 mt-2 rounded-full bg-fuchsia-500 shadow-[0_0_12px_rgba(217,70,239,0.8)]" />
-
-                        <div>
-                            <p className="text-base md:text-xl font-mono uppercase tracking-[0.3em] text-white/60">
-                                Qué hacemos
-                            </p>
-
-                            <div className="mt-3 w-12 h-px bg-fuchsia-500/60" />
-                        </div>
-
-                    </div>
-
-                    {/* Descripción */}
                     <div className="max-w-2xl">
-                        <p className="text-base md:text-lg text-white/55 leading-relaxed">
+                        <p className="text-base leading-relaxed text-white/60 md:text-lg">
                             Identidad, diseño gráfico y desarrollo web.
-                            <p><span className="text-white/80">
-                                {" "}Cada proyecto necesita una forma distinta de abordarlo.
+                            <span className="text-white/85">
+                                {" "}Cada proyecto necesita una forma distinta
+                                de abordarlo.
                             </span>
-                            </p>
                         </p>
                     </div>
-
                 </div>
 
-                {/* Servicios 2 × 2 */}
-                <div className="grid md:grid-cols-2 gap-px bg-white/10">
+               {/* Grilla de servicios */}
+<div className="mt-8 grid grid-cols-2 gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+    {services.map((service) => {
+        const isFuchsia = service.accent === "fuchsia";
 
-                    {services.map((service) => {
+        return (
+            <article
+                key={service.number}
+               className={`group relative flex aspect-square flex-col justify-between overflow-hidden bg-[#08080d] p-3 transition-colors duration-300 hover:bg-[#0c0c13] min-[400px]:p-4 sm:p-5 lg:p-4 xl:p-6 ${
+    isFuchsia
+        ? "hover:shadow-[inset_0_2px_0_rgba(217,70,239,0.8)]"
+        : "hover:shadow-[inset_0_2px_0_rgba(34,211,238,0.8)]"
+}`}
+            >
+                <div className="flex items-start justify-between">
+                    <span
+                        className={`text-2xl font-black leading-none tracking-[-0.04em] md:text-3xl ${
+                            isFuchsia
+                                ? "text-fuchsia-500"
+                                : "text-cyan-400"
+                        }`}
+                    >
+                        {service.number}
+                    </span>
 
-                        const isFuchsia = service.accent === "fuchsia";
+                    <span
+                        className={`h-px w-7 transition-all duration-300 group-hover:w-12 ${
+                            isFuchsia ? "bg-fuchsia-500" : "bg-cyan-400"
+                        }`}
+                    />
+                </div>
 
-                        return (
-                            <article
-                                key={service.number}
-                                className="
-                                    group
-                                    relative
-                                    min-h-[260px]
-                                    md:min-h-[290px]
-                                    bg-[#08080d]
-                                    p-7
-                                    md:p-9
-                                    lg:p-10
-                                    overflow-hidden
-                                    transition-all
-                                    duration-500
-                                    hover:bg-[#0c0c13]
-                                "
-                            >
+                <div>
+                    <h3 className="text-base font-black uppercase leading-tight tracking-[-0.035em] min-[400px]:text-lg sm:text-xl xl:text-2xl">
+    {service.title}
+</h3>
 
-                                {/* Línea de color */}
-                                <div
-                                    className={`
-                                        absolute
-                                        top-0
-                                        left-0
-                                        h-[2px]
-                                        w-0
-                                        group-hover:w-full
-                                        transition-all
-                                        duration-500
-                                        ${
-                                            isFuchsia
-                                                ? "bg-fuchsia-500 shadow-[0_0_18px_rgba(217,70,239,0.7)]"
-                                                : "bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.7)]"
-                                        }
-                                    `}
-                                />
+                  <p className="mt-2 text-[11px] leading-relaxed text-white/45 min-[400px]:text-xs sm:text-sm">
+    {service.text}
+</p>
+                </div>
+            </article>
+        );
+    })}
+</div>
 
-                                {/* Número + flecha */}
-                                <div className="flex items-start justify-between">
+                {/* Transición al proceso */}
+              <div
+    id="proceso"
+    className="mt-10 border-t border-white/10 pt-6 md:mt-12 md:pt-8"
+>
+                    <div className="grid items-start gap-6 md:grid-cols-[0.65fr_1.35fr] md:gap-16">
+                        <SectionLabel accent="cyan">
+                            Cómo trabajamos
+                        </SectionLabel>
 
+                        <div className="max-w-2xl">
+                            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+                                De la idea a una solución concreta.
+                            </h2>
+
+                            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/45 md:text-base">
+                                Cada etapa tiene un propósito. El proceso se
+                                adapta a las necesidades de cada proyecto, sin
+                                perder de vista el objetivo.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Etapas */}
+                    <div className="mt-8 grid gap-7 border-t border-white/10 pt-7 md:grid-cols-3 md:gap-8 md:pt-8">
+                        {steps.map((step, index) => {
+                            const isCyan = step.accent === "cyan";
+
+                            return (
+                                <article
+                                    key={step.number}
+                                    className={`relative ${
+                                        index > 0
+                                            ? "md:border-l md:border-white/10 md:pl-7"
+                                            : ""
+                                    }`}
+                                >
                                     <span
-                                        className={`
-                                            text-2xl
-                                            md:text-3xl
-                                            font-black
-                                            leading-none
-                                            tracking-[-0.04em]
-                                            ${
-                                                isFuchsia
-                                                    ? "text-fuchsia-500"
-                                                    : "text-cyan-400"
-                                            }
-                                        `}
+                                        className={`font-black text-3xl leading-none tracking-[-0.05em] md:text-4xl ${
+                                            isCyan
+                                                ? "text-cyan-400"
+                                                : "text-fuchsia-500"
+                                        }`}
                                     >
-                                        {service.number}
+                                        {step.number}
                                     </span>
 
-                                  
-
-                                </div>
-
-                                {/* Contenido */}
-                                <div className="mt-14 md:mt-16">
-
-                                    <h3 className="
-                                        text-2xl
-                                        md:text-3xl
-                                        lg:text-4xl
-                                        font-black
-                                        uppercase
-                                        tracking-[-0.035em]
-                                        leading-none
-                                    ">
-                                        {service.title}
+                                    <h3 className="mt-5 text-lg font-black uppercase tracking-[-0.025em] md:text-xl">
+                                        {step.title}
                                     </h3>
 
-                                    <p className="mt-5 max-w-md text-sm text-white/40 leading-relaxed">
-                                        {service.text}
+                                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/45">
+                                        {step.text}
                                     </p>
-
-                                </div>
-
-                                {/* Detalle decorativo */}
-                                <div
-                                    className={`
-                                        absolute
-                                        -bottom-12
-                                        -right-12
-                                        w-32
-                                        h-32
-                                        rounded-full
-                                        blur-3xl
-                                        opacity-0
-                                        group-hover:opacity-20
-                                        transition-opacity
-                                        duration-700
-                                        ${
-                                            isFuchsia
-                                                ? "bg-fuchsia-500"
-                                                : "bg-cyan-400"
-                                        }
-                                    `}
-                                />
-
-                            </article>
-                        );
-                    })}
-
+                                </article>
+                            );
+                        })}
+                    </div>
                 </div>
-
             </div>
         </section>
     );
 }
-
