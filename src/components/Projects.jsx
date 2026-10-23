@@ -16,9 +16,9 @@ const projects = [
         challenge:
             "La empresa necesitaba construir su presencia digital desde cero y contar con un espacio para presentar sus servicios de manera clara y profesional.",
         work:
-            "Diseñé y desarrollé el sitio web institucional, trabajando en la estructura de contenidos, la navegación y la presentación visual. También diseñé una presentación comercial en PDF.",
+            "Diseñé y desarrollé el sitio web institucional, definiendo la estructura de contenidos, la navegación y la presentación visual. También diseñé una presentación comercial en PDF para acompañar la comunicación de la empresa.",
         solution:
-            "Una propuesta de comunicación que integra los canales digital e institucional bajo un mismo lenguaje visual.",
+            "Un sitio web que reúne y organiza la información de la empresa, junto con una presentación comercial alineada con su identidad visual. Dos herramientas complementarias para comunicar sus servicios de manera coherente.",
         image: portadaBotto,
         href: "https://grupoboto.com.ar/",
         accent: "cyan",
@@ -34,7 +34,7 @@ const projects = [
         work:
             "Rediseñé y desarrollé la web, reorganizando los contenidos, la jerarquía visual y la experiencia de navegación para presentar la información de manera más clara y actual.",
         solution:
-            "Un espacio digital alineado con la identidad del Método CSain® y preparado para comunicar sus diferentes propuestas.",
+            "Un sitio web renovado que acompaña la evolución del Método CSain® y permite presentar sus diferentes propuestas dentro de una experiencia digital coherente con su identidad.",
         image: csainHome,
         href: "https://csain.com.ar/",
         accent: "cyan",
@@ -60,11 +60,11 @@ const projects = [
          alt: "Paleta y sistema de identidad visual de la marca Ventek",
         category: "Identidad visual",
         challenge:
-            "El proyecto necesitaba una identidad visual propia que permitiera reconocer la marca y establecer una base gráfica para su comunicación.",
+            "El proyecto necesitaba una identidad visual propia que permitiera diferenciar la marca y establecer una base gráfica para su comunicación.",
         work:
-            "Desarrollé la identidad visual desde cero, definiendo un lenguaje gráfico y sus aplicaciones para mantener consistencia en la presentación de la marca.",
+            "Desarrollé la identidad visual desde cero, definiendo los recursos gráficos y sus aplicaciones para trasladar el lenguaje de la marca a diferentes piezas.",
         solution:
-            "Un sistema visual propio que aporta unidad y reconocimiento a sus diferentes piezas de comunicación.",
+            "Una identidad visual consistente, aplicada a distintos soportes para construir una imagen reconocible y coherente.",
         image: ventek,
         accent: "magenta",
     },
@@ -78,7 +78,7 @@ const projects = [
         work:
             "Diseñé y desarrollé el sitio web, organizando la información institucional y un catálogo de productos B2B con una estructura pensada para facilitar la consulta.",
         solution:
-            "Una plataforma que combina la presentación de la empresa con un catálogo digital orientado a su comunicación comercial.",
+            "Un sitio web que reúne la presentación institucional y el catálogo de productos en un mismo espacio digital, facilitando el acceso a la información comercial.",
         image: metalAir,
         href: "https://metalair.com.ar/",
         accent: "cyan",
